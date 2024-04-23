@@ -14,9 +14,13 @@
 //     );
 // }
 export default function TabButton({children}) {
+    function handleClick() {
+        console.log('Hello World!');
+    }
     return (
       <li>
-        <button>{children}</button>
+        {/* the value of any event prop is a function */}
+        <button onClick={handleClick}>{children}</button>
       </li>
     );
 }
