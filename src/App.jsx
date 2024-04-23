@@ -1,7 +1,7 @@
 // importing images are necessary for deployment, if not then image won't load
 import componentsImg from "./assets/components.png";
 import { CORE_CONCEPTS } from './data.js';
-import Header from "./components/Header.jsx";
+import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 
 
