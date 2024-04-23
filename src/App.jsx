@@ -1,5 +1,8 @@
 // importing images are necessary for deployment, if not then image won't load
-import reactImg from './assets/react-core-concepts.png';
+import reactImg from "./assets/react-core-concepts.png";
+import componentsImg from "./assets/components.png";
+import { CORE_CONCEPTS } from './data.js';
+
 const reactDescriptions = ["Fundamental", "Crucial", "Core"];
 
 function genRandomInt(max) {
@@ -20,12 +23,48 @@ function Header() {
   );
 }
 
+// function CoreConcept(props) {
+//   return (
+//     <li>
+//       <img src={props.image} alt={props.title} />
+//       <h3>{props.title}</h3>
+//       <p>{props.description}</p>
+//     </li>
+//   );
+// }
+// Using object destructuring
+function CoreConcept({image, title, description}) {
+  return (
+    <li>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </li>
+  );
+}
+
 function App() {
   return (
     <div>
       <Header></Header>
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            <CoreConcept
+              title="Components"
+              description="The core UI building block"
+              image={componentsImg}
+            />
+            <CoreConcept
+              title={CORE_CONCEPTS[1].title}
+              description={CORE_CONCEPTS[1].description}
+              image={CORE_CONCEPTS[1].image}
+            />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
+          </ul>
+        </section>
       </main>
     </div>
   );
