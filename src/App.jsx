@@ -9,6 +9,9 @@ import TabButton from "./components/TabButton.jsx";
 
 
 function App() {
+  function handleSelect() {
+    console.log('Hello World - selected!');
+  }
   return (
     <div>
       <Header></Header>
@@ -33,12 +36,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
+            <TabButton onSelect={handleSelect}>Components</TabButton>
             {/* we can also write a label prop like this. See in the TabButton.jsx*/}
             {/* <TabButton label='Components'/>  */}
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={handleSelect}>JSX</TabButton>
+            <TabButton onSelect={handleSelect}>Props</TabButton>
+            <TabButton onSelect={handleSelect}>State</TabButton>
           </menu>
         </section>
       </main>
